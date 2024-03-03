@@ -10,6 +10,7 @@
      flex-wrap: wrap;
      justify-content: space-around;
      gap:10px;
+     height: 100vh;
 }
 .search-input {
     margin-top: 20px;
@@ -35,12 +36,10 @@
 }
 .photo-card {
     cursor:pointer;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    /* box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1); */
     overflow: hidden;
-    width: 250px; 
+
 }
 
 .photo-image {

@@ -1,3 +1,4 @@
+
 import PhotoCard from "../components/PhotoCard"
 import Search from "../components/Search";
 import { UseMainContext } from "../context/Context";
@@ -5,10 +6,9 @@ import { UseMainContext } from "../context/Context";
 const Home = () => {
 
 
-  const { state} = UseMainContext()
+  const { state } = UseMainContext()
   const { data, loading} = state
-
- 
+  
 
 
   return (

@@ -1,3 +1,4 @@
+
 import PhotoCard from "../components/PhotoCard";
 import { UseMainContext } from "../context/Context";
 const History = () => {
@@ -8,6 +9,8 @@ const History = () => {
     dispatch({ type: "SET_DATA", payload: cache[val] });
     dispatch({ type: "SET_QUERY", payload: val });
   };
+
+
 
   return (
     <main className="home-main">
