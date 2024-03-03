@@ -5,14 +5,14 @@ import LayOut from "./LayOut";
 import "./index.css";
 function App() {
   return (
-    <BrowserRouter>
+ 
       <Routes>
         <Route path="/" Component={LayOut}>
           <Route path="" Component={Home} />
           <Route path="/history" Component={History} />
         </Route>
       </Routes>
-    </BrowserRouter>
+  
   );
 }
 

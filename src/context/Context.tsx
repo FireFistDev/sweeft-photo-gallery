@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useLocation } from "react-router-dom";
 
 type SinglePageProps = {
   urls: {
@@ -44,6 +45,7 @@ type Cell = {
 const context = createContext<Cell | null>(null);
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
+  const location = useLocation()
   const initialState = {
     data: [],
     singlePhotoData: {},
@@ -74,12 +76,18 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [cache, setCache] = useState<any>({});
 
   const getData = async () => {
+
+ 
     await axios
       .get(
         `${import.meta.env.VITE_API_URL}photos/?per_page=${state.per_Page}&page=${state.pages}&order_by=popular&client_id=${import.meta.env.VITE_ACCESS_KEY}`
       )
       .then((res: any) => {
+ 
+
         dispatch({ type: "SET_DATA", payload: [...state.data, ...res.data] });
+   
+
       });
   };
 
@@ -149,12 +157,18 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
   }, [state.pages]);
 
   useEffect(() => {
-    if (!state.querySearch) {
+    if (!state.querySearch  ) {
       getData();
     } else {
       searchInfinityPictures(state.querySearch);
     }
-  }, [state.querySearch, state.pages]);
+  }, [state.querySearch, state.pages  ]);
+
+ useEffect(()=>{
+  if(location.pathname === "/"){
+    getData()
+  }
+ },[ location])
 
   return (
     <context.Provider

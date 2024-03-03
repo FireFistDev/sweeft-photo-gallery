@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { ContextProvider } from "./context/Context.tsx";
+import { BrowserRouter } from "react-router-dom";
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ContextProvider>
+   <BrowserRouter><ContextProvider>
     <App />
-  </ContextProvider>
+  </ContextProvider>  </BrowserRouter>
 );

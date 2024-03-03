@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import PhotoCard from "../components/PhotoCard";
 import { UseMainContext } from "../context/Context";
 const History = () => {
@@ -10,8 +11,10 @@ const History = () => {
     dispatch({ type: "SET_QUERY", payload: val });
   };
 
-
-
+  useEffect(()=>{
+    dispatch({ type: "SET_DATA", payload: [] });
+  },[])
+ 
   return (
     <main className="home-main">
       <div className="history-container">

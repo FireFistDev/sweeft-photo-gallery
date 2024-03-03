@@ -121,9 +121,10 @@
     text-decoration: none;
     margin: 0 10px;
     font-size: 18px;
+    cursor: pointer;
   }
   
-  /* Media query for iPhone */
+ 
   @media only screen and (max-width: 414px) {
     .navbar {
       flex-direction: column;
