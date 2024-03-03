@@ -12,6 +12,7 @@ function App() {
         <Route path="/" Component={LayOut} >
             <Route path="" Component={Home} />
             <Route path="/history" Component={History} />
+              
       </Route>
           </Routes>
  </ BrowserRouter>
