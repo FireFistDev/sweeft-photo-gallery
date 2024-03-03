@@ -157,7 +157,7 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
   }, [state.pages]);
 
   useEffect(() => {
-    if (!state.querySearch  ) {
+    if (!state.querySearch && location.pathname  !== "/history"  ) {
       getData();
     } else {
       searchInfinityPictures(state.querySearch);
