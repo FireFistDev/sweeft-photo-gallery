@@ -1,11 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import "../index.css"; // Import your CSS file
 
 export default function Nav() {
   return (
-     <nav>
-      <Link to="/" >  Main</Link>
-      <Link to='/history' >History</Link>
-     </nav>
-  )
+    <nav className="navbar">
+      <Link to="/" className="nav-link">
+        Main
+      </Link>
+      <Link to="/history" className="nav-link">
+        History
+      </Link>
+    </nav>
+  );
 }
